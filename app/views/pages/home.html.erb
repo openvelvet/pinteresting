@@ -1,6 +1,10 @@
 <div class="jumbotron center">
 	<h1>Welcome to LocalBite!</h1>
-	<p>Join our mailing list to stay updated on our latest releases.</p>
-	<input type="text" name="email box" value="enter e-mail address"> 
-	<%= link_to "Submit!","#", class: "btn btn-primary btn-lg" %>
+	<% if user_signed_in? %>
+		This is the exclusive member area
+	<% else %>
+	<p>
+		<%= link_to "Sign-up!", new_user_registration_path, class: "btn btn-primary btn-lg" %>	
+	</p>
+	<% end %>
 </div>
